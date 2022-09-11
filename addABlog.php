@@ -11,7 +11,7 @@ session_start();
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./css/styleLogin.css">
-    <title>AKASH VAIA || PROJECT</title>
+    <title>Travel</title>
 </head>
 <body>
     <section class="hero">
