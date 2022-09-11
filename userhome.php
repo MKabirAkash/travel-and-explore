@@ -1,0 +1,142 @@
+<?php
+session_start();
+$server= "localhost";
+$username= "root";
+$password= "";
+$database="travel";
+$variable=mysqli_connect($server,$username,$password,$database);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/styleLogin.css">
+    <title>AKASH VAIA || PROJECT</title>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="nav row pt-4">
+                <div class="col-4 text-light"> <h4>Travel & Explore</h4></div>
+                <div class="col-4 text-light"> <div class="row">
+                    <div class="col-4"> <a href="userhome.php" class="text-light">Home</a></div>
+                    <div class="col-4"><a href="blogs.php" class="text-light">Blogs</a></div>
+                    <div class="col-4"><a href="trips.php" class="text-light">Trips</a></div>
+                </div>
+            </div>
+                <div class="col-4 d-flex justify-content-end"> <a href="loginadmin.php" class="btn btn-outline-light rounded-pill">Login as Admin</a></div>
+            </div>
+            </div>
+            <?php
+                    if(isset($_SESSION['authuser_name'])){
+                        echo'
+                <div class="col-2 d-flex justify-content-end">
+                     <h3>' .$_SESSION['authuser_name'].'</h3>
+                </div>';
+                    
+                        echo'
+                        <div class="col-2 d-flex justify-content-end">
+                             <a href="logout.php" class="btn btn-outline-light rounded-pill">logout</a>
+                        </div>';
+                    }
+                ?>
+            </div>
+            <div class="header text-center pt-5 text-light">
+                <h2>It's a big world out there, <br> Go Explore</h2>
+                <p class="pt-4">Thinking of taking a break from every days Busy Life? Don't Worry, <br> we take care of your trip</p>
+                <div class="header text-center pt-5 text-light">
+                    <!-- Form Area -->
+                    <form action="s.php" method="post">
+                        <div class="userHomeForm w-75 bg-light m-auto text-dark rounded-pill py-3 px-5 text-start">
+                                <div class="row" >
+                                    <div class="col-4">
+                                        <label for="">Location</label>
+                                        <input class="form-control" type="text" name="area" placeholder="Write your think" style="border: 0px solid; background-color:transparent; padding-left:0px">
+                                    </div>
+                                    <div class="col-4">
+                                        <label for="">Destination Type</label>
+                                        <select name="type"  class="form-control" style="border: 0px solid; background-color:transparent; padding-left:0px;">
+                                            <option value="Mountain">Mountain Peak</option>
+                                            <option value="waterfall">Waterfall</option>
+                                            <option value="sea">Sea Beach</option>
+                                            <option value="campsite">Campsite</option>
+                                            <option value="trail">Hidden Trails</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-4">
+                                        <input type="submit" class="btn btn-success rounded-pill btn-lg w-100 h-100 d-flex align-items-center justify-content-center"></input>
+                                    </div>
+                                </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="blog mt-5">
+        <div class="card_caurosel">
+            <section class="pt-5 pb-5">
+                <div class="container">
+                    <div class="row mb-5">
+                        <div class="col-6">
+                            <h2>Popular Destination</h2>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptas laboriosam hic nostrum, exercitationem suscipit omnis tempore quo aliquid</p>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex justify-content-end mt-5"><a href="popular.php" class="btn btn-success">View More</a></div>
+                        </div>
+                    </div>
+            <!-- Card -->
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="card" style="width: 18rem;">
+                                <img src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card" style="width: 18rem;">
+                                    <img src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                    </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card" style="width: 18rem;">
+                                <img src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card" style="width: 18rem;">
+                                <img src="https://images.pexels.com/photos/346885/pexels-photo-346885.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</body>
