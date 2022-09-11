@@ -1,6 +1,3 @@
-
-
-
 <?php
 session_start();
 if(isset($_SESSION['postid'])){
@@ -16,7 +13,7 @@ $comment_content = '';
 
 if(empty($_POST["comment_name"]))
 {
- $error .= '<p class="text-danger">Name is required</p>';
+ $error .= '<p class="text-danger">Name is required.</p>';
 }
 else
 {
